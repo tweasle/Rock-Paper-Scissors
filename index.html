@@ -8,6 +8,8 @@
     
 </body>
 <script>
+  let wins = 0;
+  let loses = 0;
   function getComputerSelection () {
     let computerSelection;
     let selectionNumber = Math.floor(Math.random() * 3);
@@ -32,29 +34,36 @@
     }
     if (computerSelection === "rock" && playerSelection === "paper") {
       return `You win, ${playerSelection} beats ${computerSelection} :)`;
+      wins++;
     }
     if (computerSelection === "rock" && playerSelection === "scissors") {
       return `You lose, ${playerSelection} can't beat ${computerSelection} :(`;
+      loses++;
     }
     if (computerSelection === "paper" && playerSelection === "rock") {
       return `You lose, ${playerSelection} can't beat ${computerSelection} :(`;
+      loses++;
     }
     if (computerSelection === "paper" && playerSelection === "paper") {
       return `It's a tie, ${playerSelection} ties ${computerSelection} :|`;
     }
     if (computerSelection === "paper" && playerSelection === "scissors") {
       return `You win, ${playerSelection} beats ${computerSelection} :)`;
+      wins++;
     }
     if (computerSelection === "scissors" && playerSelection === "rock") {
       return `You win, ${playerSelection} beats ${computerSelection} :)`;
+      wins++;
     }
     if (computerSelection === "scissors" && playerSelection === "paper") {
       return `You lose, ${playerSelection} can't beat ${computerSelection} :(`;
+      loses++;
     }
     if (computerSelection === "scissors" && playerSelection === "scissors") {
       return `It's a tie, ${playerSelection} ties ${computerSelection} :|`;
     }
-    
+    return wins;
+    return loses;
   }
 </script>
 </html>
