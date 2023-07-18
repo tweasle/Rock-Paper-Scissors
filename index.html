@@ -24,9 +24,11 @@
   }
 
   function rockPaperScissors (computerSelection, playerSelection) {
+
     playerSelection = playerSelection.toLowerCase();
+    
     if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
-      console.log("That is not a valid input, please reload the page and try again");
+      console.log("That is not a valid input, please try again");
     }
 
     if (computerSelection === "rock" && playerSelection === "rock") {
@@ -34,36 +36,61 @@
     }
     if (computerSelection === "rock" && playerSelection === "paper") {
       return `You win, ${playerSelection} beats ${computerSelection} :)`;
-      wins++;
+      /*wins++;*/
     }
     if (computerSelection === "rock" && playerSelection === "scissors") {
       return `You lose, ${playerSelection} can't beat ${computerSelection} :(`;
-      loses++;
+      /*loses++;*/
     }
     if (computerSelection === "paper" && playerSelection === "rock") {
       return `You lose, ${playerSelection} can't beat ${computerSelection} :(`;
-      loses++;
+      /*loses++;*/
     }
     if (computerSelection === "paper" && playerSelection === "paper") {
       return `It's a tie, ${playerSelection} ties ${computerSelection} :|`;
     }
     if (computerSelection === "paper" && playerSelection === "scissors") {
       return `You win, ${playerSelection} beats ${computerSelection} :)`;
-      wins++;
+      /*wins++;*/
     }
     if (computerSelection === "scissors" && playerSelection === "rock") {
       return `You win, ${playerSelection} beats ${computerSelection} :)`;
-      wins++;
+      /*wins++;*/
     }
     if (computerSelection === "scissors" && playerSelection === "paper") {
       return `You lose, ${playerSelection} can't beat ${computerSelection} :(`;
-      loses++;
+      /*loses++;*/
     }
     if (computerSelection === "scissors" && playerSelection === "scissors") {
       return `It's a tie, ${playerSelection} ties ${computerSelection} :|`;
     }
-    return wins;
-    return loses;
+    /* return wins;
+    return loses; */
   }
+
+  function game () {
+    for (i=0; i<5; i++) {
+      let playerSelection = prompt("Rock, Paper, or Scissors?")
+      console.log(rockPaperScissors(getComputerSelection(), playerSelection));
+      /*
+      if (wins > loses) {
+        console.log(`You Won! ${wins} to ${loses}`);
+      } else if (loses > wins) {
+        console.log(`You lost ${loses} to ${wins} :(, better luck next time.`)
+      }
+      */
+    }
+  }
+
+  let yesOrNo = prompt('Wanna play Rock Paper Scissors?', 'Y or N');
+  yesOrNo = yesOrNo.toLowerCase();
+  if (yesOrNo === "y") {
+    console.log("Great, here we go!");
+  } else {
+    console.log("Sorry to hear that. Have a good day");
+  }
+  game();
+  console.log("If you would like to play again respond in the prompt above");
+
 </script>
 </html>
