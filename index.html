@@ -21,7 +21,7 @@
     return computerSelection;
   }
 
-  function evaluate (rockPaperScissorsResults, computerSelection, playerSelection) {
+  function returnStatement (rockPaperScissorsResults, computerSelection, playerSelection) {
     if (rockPaperScissorsResults === "win") {
       return `You win, ${playerSelection} beats ${computerSelection} :)`;
     } else if (rockPaperScissorsResults === "loss") {
@@ -31,7 +31,7 @@
     }
   }
 
-  function rockPaperScissors (computerSelection, playerSelection) {
+  function evaluate (computerSelection, playerSelection) {
 
     playerSelection = playerSelection.toLowerCase();
     
@@ -72,9 +72,7 @@
     for (i=0; i<5; i++) {
       let playerSelection = prompt("Rock, Paper, or Scissors?");
       let computerSelection = getComputerSelection();
-      console.log(evaluate(rockPaperScissors(computerSelection, playerSelection), computerSelection, playerSelection));
-      /*console.info(`wins: ${wins}`);
-      console.info(`loses: ${loses}`);*/
+      console.log(returnStatement(evaluate(computerSelection, playerSelection), computerSelection, playerSelection));
     }
   }
 
@@ -86,21 +84,7 @@
     console.log("Sorry to hear that. Have a good day");
   }
 
-/* for (i = 0; i < infinity; i++) {} 
-
-if (i > 0) {
-  Wanna play again?
-}*/
   game();
-/*
-  if (wins > loses) {
-        console.log(`You Won ${wins} to ${loses}, congratulations!`);
-      } else if (loses > wins) {
-        console.log(`You lost ${loses} to ${wins} :(, better luck next time.`)
-      } else {
-        console.log(`It's a tie! You tied ${wins} to ${loses}`)
-      }
-*/
-  console.log("If you would like to play again respond in the prompt above");
+
 </script>
 </html>
