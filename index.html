@@ -72,7 +72,8 @@
         console.log("That is not a valid input, please try again");
       } else {
         let computerSelection = getComputerSelection();
-        console.log(returnStatement(evaluate(computerSelection, playerSelection), computerSelection, playerSelection));
+        let gameResult = evaluate(computerSelection, playerSelection);
+        console.log(returnStatement(gameResult, computerSelection, playerSelection));
         i++;
       }
     }
