@@ -96,7 +96,7 @@
   }
 
   let yesOrNo = prompt('Wanna play Rock Paper Scissors?', 'y or n');
-  if (typeof(yesOrNo) != "string") {
+  if (typeof(yesOrNo) === "string") {
     yesOrNo = yesOrNo.toLowerCase();
   }
 
