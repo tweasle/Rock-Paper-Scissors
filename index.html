@@ -63,7 +63,7 @@
   }
 
   function game () {
-    for (i=0; i<5; i++) {
+    for (i=0; i<5;) {
       let playerSelection = prompt("Rock, Paper, or Scissors?");
 
       playerSelection = playerSelection.toLowerCase();
@@ -73,6 +73,7 @@
       } else {
         let computerSelection = getComputerSelection();
         console.log(returnStatement(evaluate(computerSelection, playerSelection), computerSelection, playerSelection));
+        i++;
       }
     }
   }
